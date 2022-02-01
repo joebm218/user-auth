@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search Results</title>
+  {{> link}}
+  <link rel="stylesheet" type="text/css" href="/css/search_style.css">
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
+</head>
+
+<body style="  background-color: #cccccc;">
+
+  {{> profile_header}}
+
+
+  {{!-- start --}}
+  <form method="POST" action="/search-results">
+    <div class="container w3-white " style="width: 1150px;margin-top: 1%;">
+      <div class="w3-row">
+        <div class="w3-container w3-quarter" style="padding-top: 1%;">
+          <label><i class="fa fa-plane"></i>&nbsp;Departure</label>
+          <select class="w3-input w3-border w3-round-large" name="departure" searchable="Search here.." required>
+            <option value="" disabled selected>Departing From</option>
+            <option value="">Select Country</option>
+            <option value="KOCHI">Kochi</option>
+            <option value="DUBAI">Dubai</option>
+          </select>
+        </div>
+        <div class="w3-container w3-quarter" style="padding-top: 1%;">
+          <label><i class="fa fa-fighter-jet"></i>&nbsp;Arrival</label>
+          <select class="w3-input w3-border w3-round-large" name="arrival" searchable="Search here.." required>
+            <option value="" disabled selected>Arriving at</option>
+            <option value="">Select Country</option>
+            <option value="KOCHI">Kochi</option>
+            <option value="DUBAI">Dubai</option>
+          </select>
+        </div>
+
+        <div class="w3-half">
+          <div class="w3-row">
+
+            <div class="w3-col w3-container" style="width:30%;padding-top: 2%;">
+              <label><i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;Date Range</label>
+              <div class="input-group">
+                <input class="w3-input w3-border w3-round-large" name="date" required
+                  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date" placeholder="YYYY-MM-DD" required>
+              </div>
+            </div>
+            <div class="w3-col w3-container" style="width:30%;padding-top: 7%;padding-left: 7%;">
+              <select class="w3-input  w3-round-large" name="trip_type" searchable="Search here.."
+                style="border: 2px solid #000;border-radius: 12px;" required>
+                <option value="Round-Trip">Round Trip</option>
+                <option value="One-Way">One Way</option>
+              </select>
+            </div>
+            <div class="w3-rest w3-container" style="padding-top: 7%;">
+              <p><button type="submit" class="w3-button w3-black w3-round-large" style="width: 100%;">Search
+                  Flights</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+  </div>
+
+  <div class="container">
+    <div class="w3-row w3-border" style="width: 100%;background-size: cover;">
+      <h2 class="font-mont">Search Results.</h2>
+    </div>
+  </div>
+
+  {{!-- results --}}
+  {{#each results}}
+
+  <div class="container w3-white " style="width: 1150px;margin-top: 1%;padding: 1%;">
+    <div class="w3-row">
+      <div class="w3-container w3-quarter" style="padding-top: 1%;">
+        <img src="/images/{{this.flightimg}}" alt="Img1" width="100px;">
+      </div>
+      <div class="w3-container w3-quarter" style="padding-top: 1%;">
+        <label class="font-arial" style="font-size: 19px;">TIME & DATE</label>
+        <p style="font-size: 11px;padding-left: 3%;">{{this.time}} {{this.date}}</p>
+      </div>
+
+      <div class="w3-half">
+        <div class="w3-row">
+
+          <div class="w3-col w3-container" style="width:40%;padding-top: 1%;">
+            <label class="font-arial" style="font-size: 24px;">1 HOUR 10 MIN</label>
+            <p style="font-size: 14px;padding-left: 20%;">{{this.departure}} - {{this.arrival}}</p>
+          </div>
+          <div class="w3-col w3-container" style="width:20%;padding-top: 3%;padding-left: 5%;">
+            <label class="font-arial" style="font-size: 18px;">$125.66</label>
+            <p style="font-size: 10px;padding-left: 10%;">{{this.trip_type}}</p>
+          </div>
+          <div class="w3-rest w3-container" style="padding-top: 5%;padding-left: 5%;">
+            <p><button type="submit" class="w3-button w3-black w3-round-large" style="width: 68%;">BOOK FLIGHT</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+
+  {{!-- <div class="container w3-white " style="width: 1150px;margin-top: 1%;padding: 1%;">
+    <div class="w3-row">
+      <div class="w3-container w3-quarter" style="padding-top: 1%;">
+      <img src="/images/image.jpg" alt="Img1" width="100px;"  >
+      </div>
+      <div class="w3-container w3-quarter" style="padding-top: 1%;">
+        <label class="font-arial" style="font-size: 19px;">TIME & DATE</label>
+       <p style="font-size: 11px;padding-left: 5%;">22:00 PM 02/02/19</p>
+      </div>
+
+      <div class="w3-half">
+        <div class="w3-row">
+
+          <div class="w3-col w3-container" style="width:40%;padding-top: 1%;">
+            <label class="font-arial" style="font-size: 24px;">1 HOUR 10 MIN</label>
+             <p style="font-size: 14px;padding-left: 5%;">KOCHI - NEW DELHI</p>
+          </div>
+          <div class="w3-col w3-container" style="width:20%;padding-top: 3%;padding-left: 5%;">
+            <label class="font-arial" style="font-size: 18px;">$125.66</label>
+             <p style="font-size: 10px;padding-left: 5%;">Round trip</p>
+          </div>
+          <div class="w3-rest w3-container" style="padding-top: 5%;padding-left: 5%;">
+            <p><button type="submit" class="w3-button w3-black w3-round-large" style="width: 68%;">BOOK FLIGHT</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container w3-white " style="width: 1150px;margin-top: 1%;padding: 1%;">
+    <div class="w3-row">
+      <div class="w3-container w3-quarter" style="padding-top: 1%;">
+      <img src="/images/image.jpg" alt="Img1" width="100px;"  >
+      </div>
+      <div class="w3-container w3-quarter" style="padding-top: 1%;">
+        <label class="font-arial" style="font-size: 19px;">TIME & DATE</label>
+       <p style="font-size: 11px;padding-left: 5%;">22:00 PM 02/02/19</p>
+      </div>
+
+      <div class="w3-half">
+        <div class="w3-row">
+
+          <div class="w3-col w3-container" style="width:40%;padding-top: 1%;">
+            <label class="font-arial" style="font-size: 24px;">1 HOUR 10 MIN</label>
+             <p style="font-size: 14px;padding-left: 5%;">KOCHI - NEW DELHI</p>
+          </div>
+          <div class="w3-col w3-container" style="width:20%;padding-top: 3%;padding-left: 5%;">
+            <label class="font-arial" style="font-size: 18px;">$125.66</label>
+             <p style="font-size: 10px;padding-left: 5%;">Round trip</p>
+          </div>
+          <div class="w3-rest w3-container" style="padding-top: 5%;padding-left: 5%;">
+            <p><button type="submit" class="w3-button w3-black w3-round-large" style="width: 68%;">BOOK FLIGHT</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> --}}
+
+
+  {{!-- end --}}
+
+
+
+</body>
+
+</html>

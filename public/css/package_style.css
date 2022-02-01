@@ -1,0 +1,52 @@
+   p.a {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+    }
+
+    .font-arial {
+      font-family: "Arial";
+    }
+    .font-mont{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .center {
+      padding: 20px 0;
+
+      text-align: left;
+      margin-left: 30px;
+
+    }
+
+    img:hover {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    .name {
+      display: inline-block;
+      width: 49%;
+    }
+
+    input[type=text] {
+      width: 90%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid rgb(8, 8, 8);
+      border-radius: 4px;
+    }
+
+    .button-color {
+      color: #000 !important;
+    }
+
+    .img-radius {
+      border-radius: 50%;
+      background-color: rgb(70, 75, 65);
+      padding: 20px;
+    }
+    .vl {
+  border-left: 1px solid black;
+  height: 50px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+  {{> link}}
+  <link rel="stylesheet" type="text/css" href="/css/register_style.css">
+</head>
+
+<body style="  background-color: #cccccc;">
+
+  <div class="w3-container" style="margin-top: 1%">
+    <center><img src="/images/icon.png"></center>
+  </div>
+  <div class="container">
+
+    <div class="w3-row w3-border" style="background-image: url('/images/image.jpg');  width: 100%;
+    background-size: cover;margin-top:4%;">
+      <div class="w3-container w3-half  " style="height:100%">
+
+      </div>
+      <div class="w3-container w3-half " style="height:100%">
+        <div class="container" style="background-color: rgb(255, 255, 255);width:80%; height:115%;  margin-top: 25px;
+">
+          <form method="post" action="/reg">
+
+            <div class="center">
+
+              <p class="a" style="color: #CBA33F">Register.</p></br>
+              <div class="row">
+                <div class="name">
+                  <label class="font-arial " style="color: red;"><b>{{fname}}</b></label></br>
+                  <label class="font-arial "><b>First Name</b></label></br>
+                  <input type="text" id="firstname" name="firstName" value="{{mydata.firstName}}" />
+                </div>
+                <div class="name">
+                  <label class="font-arial " style="color: red;"><b>{{lname}}</b></label></br>
+                  <label class="font-arial "><b>Last Name</b></label></br>
+                  <input type="text" id="lastname" name="lastName" value="{{mydata.lastName}}" />
+                </div>
+              </div></br>
+              <div class="row">
+                <label class="font-arial " style="color: red;"><b>{{address}}</b></label></br>
+                <label class="font-arial"><b>ADDRESS</b></label></br>
+                <textarea class="form-control" style="width:95%;border:1px solid rgb(8, 8, 8);" id="address"
+                  name="address">{{mydata.address}}</textarea>
+              </div></br>
+              <div class="row">
+                <div class="name">
+                  <label class="font-arial " style="color: red;"><b>{{city}}</b></label></br>
+                  <label class="font-arial "><b>CITY</b></label></br>
+                  <input type="text" name="city" id="city" value="{{mydata.city}}" />
+                </div>
+                <div class="name">
+                  <label class="font-arial " style="color: red;"><b>{{zip}}</b></label></br>
+                  <label class="font-arial "><b>Zip Code</b></label></br>
+                  <input type="text" name="zip" id="zip" value="{{mydata.zip}}" maxlength="6" />
+                </div>
+              </div></br>
+              <div class="row">
+                <label class="font-arial " style="color: red;"><b>{{country}}</b></label></br>
+                <label class="font-arial"><b>Country</b></label>
+                <select id="country" name="country" class="form-control"
+                  style="border:1px solid rgb(8, 8, 8);width:95%;">
+                  <option value="">Select Country</option>
+                  <option value="America">America</option>
+                  <option value="India">India</option>
+                  <option value="Malaysia">Malaysia</option>
+                </select>
+
+              </div></br>
+              <div class="row">
+                <label class="font-arial " style="color: red;"><b>{{username}}</b></label></br>
+                <label class="font-arial"><b>Username</b></label>
+                <input type="text" name="username" id="username" value="{{mydata.username}}" />
+
+
+              </div></br>
+
+              <div class="row">
+                <div class="name">
+                  <label class="font-arial " style="color: red;"><b>{{password}}</b></label></br>
+                  <label class="font-arial "><b>Password</b></label></br>
+                  <input type="text" name="password" id="password" value="{{mydata.password}}" />
+                </div>
+                <div class="name">
+                  <label class="font-arial " style="color: red;"><b>{{confirm_pass}}</b></label></br>
+                  <label class="font-arial "><b>Confirm Password</b></label></br>
+                  <input type="text" name="confirm_password" id="confirm_password" />
+                </div>
+              </div></br>
+
+              <div style="text-align: left;">
+                <a href="login" type="submit" style="margin-left: 35%;"><button
+                    class="w3-button w3-black w3-border w3-round-large font-arial" style="width:100%;"><b>SIGN
+                      UP</b></button></a></br></br>
+                <a href="home">
+                  <p class="font-arial" style="margin-left: 25%;"><b>Already a member ? Sign In</b></p>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

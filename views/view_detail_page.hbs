@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Detail page</title>
+  {{> link}}
+  <link rel="stylesheet" type="text/css" href="/css/detail_style.css">
+
+
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
+
+
+</head>
+
+<body style="  background-color: #cccccc;">
+
+  {{> profile_header}}
+
+  <div class="container">
+    {{!--  background-image: url('/images/image.jpg'); --}}
+    <div class="w3-row w3-border" style="width: 100%;background-size: cover;margin-top:4%;">
+      <div class="w3-container w3-half" style="height:100%">
+        <div class="row" style="margin-top: 20px;">
+          <img class="mySlides" src="/images/{{list1.imga}}" style="width:100%">
+          <img class="mySlides" src="/images/{{list1.imgb}}" style="width:100%">
+          <img class="mySlides" src="/images/{{list1.imgc}}" alt="{{list.country}}" style="width:100%">
+        </div>
+      </div>
+      <div class="w3-container w3-half " style="height:100%">
+        <div class="container" style="background-color: rgb(255, 255, 255);width:80%; height:90%;  margin-top: 20px;">
+          <div class="center">
+            <a href="/package"><i class="fa fa-arrow-left"
+                style="font-size:20px;padding-left: 85%;color:black;"></i></a>
+
+            <p class="a" style="color: #CBA33F">{{list1.country_name}}</p></br>
+            <div class="row" style="text-align: justify;margin-right: 35px;">
+              <p>{{list1.content}}</p>
+            </div></br>
+            <div class="row">
+              <label class="font-arial"><b>Amount Payable</b></label></br>
+              <label class="font-arial">
+                <font size="5"><b>{{list1.rate}}$</b></font>
+              </label></br>
+            </div>
+
+            <div class="row">
+              <a href="login"><button class="w3-button w3-black w3-border w3-round-large font-arial"
+                  style="width:40%;"><b>BOOK FLIGHT</b></button></a></br></br>
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+  </script>
+</body>
+
+</html>

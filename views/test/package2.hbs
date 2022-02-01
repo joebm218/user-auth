@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Packages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    p.a {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+    }
+
+    .font-arial {
+      font-family: "Arial";
+    }
+    .font-mont{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .center {
+      padding: 20px 0;
+
+      text-align: left;
+      margin-left: 30px;
+
+    }
+
+    img:hover {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    .name {
+      display: inline-block;
+      width: 49%;
+    }
+
+    input[type=text] {
+      width: 90%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid rgb(8, 8, 8);
+      border-radius: 4px;
+    }
+
+    .button-color {
+      color: #000 !important;
+    }
+
+    .img-radius {
+      border-radius: 50%;
+      background-color: rgb(70, 75, 65);
+      padding: 20px;
+    }
+    .vl {
+  border-left: 1px solid black;
+  height: 50px;
+}
+  </style>
+
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
+</head>
+
+<body style="  background-color: #cccccc;">
+
+  <div class="container-fluid"
+    style="background-color: rgb(255, 255, 255);height:70px;width:85%;padding-top: 15px;padding-left: 20px;margin-top: 0.5%">
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-bars"></i>
+          </button>
+          <div class="dropdown-menu col-sm-6" style="box-shadow: 10px 15px 25px 5px #969696;padding-top: 20px;"
+            aria-labelledby="dropdownMenuButton">
+            <center>
+              <div class="col-sm-10" style="margin-top:10px;background:white;padding:2%;margin-left:5%;height:300px;">
+
+                <div class="img-rounded"
+                  style="width:100px;height:100px;background-color:rgb(231, 231, 231);border-radius:50%;"></div>
+                <div style="padding-top:1%;">
+                  <a style="float: left;padding: 5px;font-size:20px;margin-left: 5px;color:black;font-weight: bold;"
+                    href="#"> <span class="dropmenu col-sm-12"> <i aria-hidden="true" title="Name"></i>
+                      John Doe</span></a>
+                  <a style="float: left;padding: 5px;margin-left: 5%;color:black;" href="#"> <span
+                      class="dropmenu col-sm-12"> <i aria-hidden="true" title="View"></i>
+                      View Profile</span></a>
+                  <a style="float: left;padding: 5px;margin-left: 5px;color:black;font-weight: bold;" href="#"> <span
+                      class="dropmenu col-sm-12"> <i class="fa fa-rss" aria-hidden="true" title="FEED"></i>
+                      FEED</span></a>
+                  <a style="float: left;padding: 5px;margin-left: 5px;color:black;font-weight: bold;" href="#"> <span
+                      class="dropmenu col-sm-12"><i class="fa fa-compass" aria-hidden="true" title="EXPLORE"></i>
+                      EXPLORE</span></a>
+                  <a style="float: left;padding: 5px;color:black;font-weight: bold;" href="#"> <span
+                      class="dropmenu col-sm-12"><i class="fa fa-envelope" aria-hidden="true" title="MESSAGES"></i>
+                      MESSAGES</span></a>
+                  <a style="float: left;padding: 5px;margin-left: 5px;color:black;font-weight: bold;" href="#"> <span
+                      class="dropmenu col-sm-12"><i class="fa fa-cog" aria-hidden="true" title="SETTINGS"></i>
+                      SETTINGS</span></a>
+                </div>
+              </div>
+            </center>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" style="padding-left:10%;">
+        <div class="col-md-2">
+          <img src="/images/icon.png">
+        </div>
+      </div>
+      <div class="col-md-2" style="padding-left: 150px;">
+        <div class="img-radius">
+        </div>
+      </div>
+      <div class="col-md-2" style="padding-left: 30px;margin-top: 1%">
+        <label class="font-arial"><b>{{list.firstName}}</b></label></br>
+      </div>
+    </div>
+  </div>
+
+  {{!-- start --}}
+  <div class="container w3-white " style="width: 1150px;margin-top: 1%;">
+    <div class="w3-row">
+      <div class="w3-container w3-col" style="width:20%;padding-top: 1%;">
+        <label><i class="fa fa-plane"></i>&nbsp;Departure</label>
+        <select class="w3-input w3-border w3-round-large" searchable="Search here..">
+  <option value="" disabled selected>Departing From</option>
+  <option value="">Select Country</option>
+  <option value="USA">USA</option>
+  <option value="Germany">Germany</option>
+  <option value="France">France</option>
+  <option value="Poland">Poland</option>
+  <option value="Japan">Japan</option>
+</select>
+        {{!-- <input class="w3-input w3-border" type="text" placeholder="Departing from"> --}}
+      </div>
+      <div class="w3-container w3-col" style="width:20%;padding-top: 1%;">
+        <label><i class="fa fa-fighter-jet"></i>&nbsp;Arrival</label>
+            <select class="w3-input w3-border w3-round-large" searchable="Search here..">
+  <option value="" disabled selected>Arriving at</option>
+  <option value="">Select Country</option>
+  <option value="USA">USA</option>
+  <option value="Germany">Germany</option>
+  <option value="France">France</option>
+  <option value="Poland">Poland</option>
+  <option value="Japan">Japan</option>
+</select>
+      </div>
+           <div class="w3-container w3-col" style="width:20%;padding-top: 1%;">
+       <label><i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;Date Range</label>
+              <div class="input-group">
+            <input class="w3-input w3-border w3-round-large" type="date" placeholder="Date Range">
+            </div>
+      </div>
+           <div class="w3-container w3-col" style="width:20%;padding-top: 1%;">
+           <label><i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;Date Range(To)</label>
+              <div class="input-group">
+            <input class="w3-input w3-border w3-round-large" type="date" placeholder="Date Range">
+            </div>
+      </div>
+           <div class="w3-container w3-col" style="width:20%;padding-top: 3.2%;">
+        <p><button type="submit" class="w3-button w3-black w3-round-large" style="width: 100%;">Search
+                Flights</button></p>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="container">
+      <div class="w3-row w3-border" style="width: 100%;background-size: cover;">
+        <h2 class="font-mont">Featured Packages.</h2>
+        </div>
+    </div>
+
+    {{!-- results --}}
+
+  <div class="container  " style="width: 1150px;margin-top: 1%;padding: 1%;">
+  <div class="w3-row" style="padding: 1%">
+
+        <div class="col-sm-2" style="margin-top:10px;background:white;padding:2%;margin-left:2%;box-shadow: 1px 5px 7px 1px #999999;">
+            <center>
+                <div class="img-rounded" style="width:100px;height:100px;background-image: url('/images/aus1.jpg');background-size: cover;border-radius:50%;"></div>
+                <h5 class="font-arial"><a href="http://localhost:3000/australia" style="color:black"><b>AUSTRALIA</b></a></h5>
+                <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <span class="font-arial"><font size="5"><b>230$</b></font></span>
+            </center>
+        </div>
+        
+        <div class="col-sm-2" style="margin-top:10px;background:white;padding:2%;margin-left:2%;box-shadow: 1px 5px 7px 1px #999999;">
+            <center>
+                <div class="img-rounded" style="width:100px;height:100px;background-image: url('/images/aus2.jpg');background-size: cover;border-radius:50%;"></div>
+                <h5 class="font-arial"><a href="http://localhost:3000/paris" style="color:black"><b>PARIS</b></a></h5>
+                <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <span class="font-arial"><font size="5"><b>230$</b></font></span>
+            </center>
+        </div>
+        
+        <div class="col-sm-2" style="margin-top:10px;background:white;padding:2%;margin-left:2%;box-shadow: 1px 5px 7px 1px #999999;">
+            <center>
+                <div class="img-rounded" style="width:100px;height:100px;background-image: url('/images/dub1.jpg');background-size: cover;border-radius:50%;"></div>
+                <h5 class="font-arial"><a href="http://localhost:3000/dubai" style="color:black"><b>DUBAI</b></a></h5>
+                <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <span class="font-arial"><font size="5"><b>230$</b></font></span>
+            </center>
+        </div>
+        
+        <div class="col-sm-2" style="margin-top:10px;background:white;padding:2%;margin-left:2%;box-shadow: 1px 5px 7px 1px #999999;">
+            <center>
+                <div class="img-rounded" style="width:100px;height:100px;background-image: url('/images/dub2.jpg');background-size: cover;border-radius:50%;"></div>
+                <h5 class="font-arial"><a href="http://localhost:3000/malaysia" style="color:black"><b>MALAYSIA</b></a></h5>
+                <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <span class="font-arial"><font size="5"><b>230$</b></font></span>
+            </center>
+        </div>
+          <div class="col-sm-2" style="margin-top:10px;background:white;padding:2%;margin-left:2%;box-shadow: 1px 5px 7px 1px #999999;">
+            <center>
+                <div class="img-rounded" style="width:100px;height:100px;background-image: url('/images/ams1.jpg');background-size: cover;border-radius:50%;"></div>
+                <h5 class="font-arial"><a href="http://localhost:3000/amsterdam" style="color:black"><b>AMSTERDAM</b></a></h5>
+                <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <span class="font-arial"><font size="5"><b>230$</b></font></span>
+            </center>
+        </div>
+        
+        </div>
+  </div>
+
+ 
+
+</body>
+
+</html>

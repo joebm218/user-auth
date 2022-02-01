@@ -1,0 +1,21 @@
+p.a {
+    font-family: 'Playfair Display', serif;   
+font-size: 30px;
+}
+button.c{
+ font-family: "Arial"
+}
+.center {
+ padding: 70px 0;
+
+text-align: center;
+}
+.icon{
+background-image: url('/images/icon.png');
+background-repeat: no-repeat;
+background-position: center; 
+}
+img:hover {
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+}

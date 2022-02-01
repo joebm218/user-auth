@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="  background-color: #cccccc;">
+
+  <div class="w3-container" style="margin-top: 1%">
+    <center><img src="/images/icon.png" class="icon"></center>
+  </div>
+  <div class="container">
+
+    <div class="w3-row w3-border" style="background-image: url('/images/image.jpg');  width: 100%;
+    background-size: cover;margin-top:4%;">
+      <div class="w3-container w3-half  " style="height:500px">
+
+      </div>
+      <div class="w3-container w3-half " style="height:500px">
+        <div class="container" style="background-color: rgb(255, 255, 255);width:80%; height:80%;  margin-top: 25px;
+">
+          <div class="center">
+          <form method="post" action="/user">
+
+            <p class="a" style="color: #CBA33F">Sign In</p></br>
+            <label class="font-arial " style="color:red"><b>{{text}}</b></label></br>
+            <label class="font-arial "><b>Username</b></label></br>
+            <input type="text" id="username" name="username" placeholder="John Doe" required /></br></br>
+            <label class="font-arial "><b>Password</b></label></br>
+            <input type="password" id="password" name="password" placeholder=".........." required /></br></br>
+
+            <div style="text-align: left;margin-left: 80px;">
+              <a type="submit"><button class="w3-button w3-black w3-border w3-round-large font-arial"><b>LOG IN</b></button></a></br></br>
+              <a href="home">
+                <p class="font-arial"><b>Forgot Password ?</b></p>
+              </a>
+            </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

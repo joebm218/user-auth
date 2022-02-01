@@ -1,0 +1,41 @@
+p.a {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+  }
+
+  .font-arial {
+    font-family: "Arial";
+  }
+
+  .center {
+    padding: 20px 0;
+
+    text-align: left;
+    margin-left: 30px;
+
+  }
+
+  .icon {
+    background-image: url('/images/icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  .name {
+    display: inline-block;
+    width: 49%;
+  }
+
+  input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 4px;
+  }

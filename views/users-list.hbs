@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Users</title>
+  {{> link}}
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+  <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body style="  background-color: #cccccc;">
+
+  <div class="w3-container" style="margin-top: 1%">
+    <center><img src="/images/icon.png"></center>
+  </div>
+  <div class="container">
+
+    <div class="w3-row w3-border" style="background-image: url('/images/image.jpg');  width: 100%;
+    background-size: cover;margin-top:4%;">
+      <div class="w3-container w3-half  " style="height:100%">
+
+      </div>
+      <div class="w3-container w3-half " style="height:100%">
+        <div class="container" style="background-color: rgb(255, 255, 255);width:80%; height:115%;  margin-top: 25px;
+">
+<table id="example" class="display table table-bordered table-hover "  style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{this.firstName}} {{this.lastName}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.country}}</td>
+            <td>{{this.username}}</td>
+        </tr>
+             {{/each}}
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Username</th>
+        </tr>
+    </tfoot>
+</table>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Staff Portal</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+  <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+  <script>
+  $('#button').click(function() {
+    var val1 = $('#text1').val();
+    var val2 = $('#text2').val();
+    $.ajax({
+        type: 'POST',
+        url: 'process.php',
+        data: { text1: val1, text2: val2 },
+        success: function(response) {
+            $('#result').html(response);
+        }
+    });
+});
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable();
+      $(".pushme2").click(function(){
+		$(this).text(function(i, v){
+		   return v === 'OUT' ? 'IN' : 'OUT'
+		});
+    });
+    
+    $(".with-color").click(function () {    
+       if($(this).hasClass("btn-warning"))
+       {
+       		$(this).addClass("btn-danger");
+       		$(this).removeClass("btn-warning");
+       }
+       else{
+       		$(this).addClass("btn-warning");
+       		$(this).removeClass("btn-danger");
+       }
+    });
+  } );
+  </script>
+</head>
+<body>
+  <div class="container" style="padding-top: 2%;">
+  <table id="example" class="display table table-bordered table-hover "  style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>POK</td>
+            <td>Software Engineer</td>
+            <td><button id="button" class='btn btn-success pushme2 with-color'>OUT</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>ABC</td>
+            <td>Software Engineer</td>
+            <td><button class='btn btn-success pushme2 with-color'>OUT</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>XYZ</td>
+            <td>Software Engineer</td>
+            <td><button class='btn btn-success pushme2 with-color'>OUT</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>QWE</td>
+            <td>Software Engineer</td>
+            <td><button class='btn btn-success pushme2 with-color'>OUT</button></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>WSE</td>
+            <td>Software Engineer</td>
+            <td><button class='btn btn-success pushme2 with-color'>OUT</button></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>SWE</td>
+            <td>Software Engineer</td>
+            <td><button class='btn btn-success pushme2 with-color'>OUT</button></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Status</th>
+        </tr>
+    </tfoot>
+</table>
+</div>
+</body>
+
+</html>
