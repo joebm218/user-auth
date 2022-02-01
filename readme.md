@@ -1,4 +1,4 @@
-# API for User Authentication System using NodeJs,HandleBars and MongoDB
+# User Authentication System using NodeJs,HandleBars and MongoDB
 
 cp .env-example .env
 
