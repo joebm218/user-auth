@@ -29,7 +29,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(dbURI, dbOpts);
 
 // CONNECTION EVENTS
-// When successfully connected
+// When successfully connected 
 mongoose.connection.on('connected', () => {
   debug(`Mongoose default connection open to ${dbURI}`);
 });
