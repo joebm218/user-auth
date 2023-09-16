@@ -66,7 +66,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-/* Routes */
+/* Routes  */
 
 app.get('/', (req, res) => {
   User.find({}, (err, user) => {
